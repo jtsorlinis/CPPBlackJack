@@ -56,7 +56,7 @@ std::string CardPile::print() {
 void CardPile::shuffle() {
   // Fisher yates
   for (auto i = static_cast<int>(m_cards_.size()) - 1; i > 0; i--) {
-    const auto j = pcg32_range(i);
+    const auto j = pcg32_range(i + 1);
     std::swap(m_cards_[i], m_cards_[j]);
   }
 }
